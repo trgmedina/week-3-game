@@ -1,0 +1,17 @@
+body {
+	background-color: black;
+}
+
+.jumbotron {
+    background-image: url("../images/banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center fixed;
+    background-size: cover;
+}
+
+h1.textEffect, h2 {
+	color: white;
+    text-shadow: 1px 1px 2px black, 0 0 40px gray, 0 0 20px white;
+    font-family: 'Spinnaker', sans-serif;
+    text-align: center;
+}
