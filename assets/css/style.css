@@ -1,5 +1,5 @@
 body {
-	background-color: black;
+	background-image: url("../images/background-image.png");
 }
 
 .jumbotron {
@@ -9,9 +9,13 @@ body {
     background-size: cover;
 }
 
-h1.textEffect, h2 {
+h1.textEffect, h2, h4 {
 	color: white;
     text-shadow: 1px 1px 2px black, 0 0 40px gray, 0 0 20px white;
     font-family: 'Spinnaker', sans-serif;
     text-align: center;
+}
+
+p {
+	color: white;
 }
