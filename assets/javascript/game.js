@@ -1,3 +1,4 @@
+//Characters from Studio Ghibli films
 var characterNames = [
   "ARRIETTY",
   "HOWL",
@@ -10,6 +11,7 @@ var characterNames = [
   "TOTORO"
 ];
 
+// Sets up variables
 var wins = 0;
 var lives = 10;
 var ltrPlacement = [];
@@ -100,6 +102,7 @@ document.onkeyup = function(event){
   var wrongLetter = wrongGuess.toString();
   printLtrPlacement = ltrPlacement.join(" ");
 
+  // Creates html
   var html = "<h4>Press any key to start playing!</h4>" + "</br>" +
           "<p>Wins: " + wins + "</p>" +
           "<p>Lives: " + lives + "</p>" +
@@ -109,6 +112,7 @@ document.onkeyup = function(event){
   // Injecting the HTML we just created into our div and updating the game information on our page.
   document.querySelector("#game").innerHTML = html;
 
+  // Determines what to do if you win or lose
   if (lives === 0) {
     alert("Game Over!");
     restart();
