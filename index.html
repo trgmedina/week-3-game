@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spinnaker">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<!-- <link rel="stylesheet" href="assets/css/reset.css>" -->
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 
 <body>
@@ -21,13 +23,17 @@
 
 		<div class="row marketing">
        		<div class="col-lg-6">
-        		<h4 id="film-name">Guess that animated film!</h4>
+        		<h4 id="film-name">Guess that character!</h4>
          		<img id="ghibli-image" src="assets/images/studio-ghibli.jpg" alt="Studio Ghibli" class="img-thumbnail">
         	</div>
 
         	<div class="col-lg-6">
-        		<h4>Press any key to play!</h4>
-        		<p id="wins"></p>
+        		<div id="game">
+        			<h4>Press any key to start playing!</h4>
+        		</div>
+
+        		<div id="character">
+        		</div>
 >         	</div>
     	</div>
 	</div>
