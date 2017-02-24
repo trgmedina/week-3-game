@@ -139,7 +139,7 @@ document.onkeyup = function(event){
 
   // Determines what to do if you win or lose
   if (lives === 0) {
-    alert("Game Over!");
+    alert("You lose. Game Over!");
     restart();
   }
   else if (lives > 0) {
