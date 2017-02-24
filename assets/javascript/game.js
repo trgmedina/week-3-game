@@ -95,6 +95,7 @@ document.onkeyup = function(event){
   var counter = 0;
   var allLettersFound;
 
+// Checks to see if user key is a letter and if it matches a letter in the character array 
   if (userGuess.match(/[a-z]/i)) {
     for (var i=0; i < charArray.length; i++) {
 
@@ -104,9 +105,22 @@ document.onkeyup = function(event){
       }
     }
 
+// Checks to see if user key has already been pressed and logs it if it does not match the letter in the character name
     if (counter === 0 && userGuess.length === 1) {
-      wrongGuess.push(userGuess);
-      lives--;
+
+      var wasPressed = false;
+
+      for (var i=0; i < wrongGuess.length; i++) {
+        
+        if (userGuess === wrongGuess[i]) {
+          wasPressed = true;
+        }
+      }
+      
+      if (wasPressed === false) {
+        wrongGuess.push(userGuess);
+        lives--;
+      }
     }
   }
 
