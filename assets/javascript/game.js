@@ -4,8 +4,8 @@ var characterNames = [
   "HOWL",
   "KIKI",
   "PONYO",
-  "KAGUYA",
-  "MONONOKE",
+  "TAKENOKO",
+  "ASHITAKA",
   "CHIHIRO",
   "HAKU",
   "TOTORO"
@@ -23,31 +23,40 @@ var charArray = randomChar.split("");
 //Changes picture
 function changeImage() {
   if (randomChar === "ARRIETTY") {
-    document.getElementById("ghibli-image").src = "assets/images/arrietty.jpg";
+    $("#ghibli-image").attr("src", "assets/images/arrietty.jpg");
+    $("#image-caption").text("Arrietty from:");
   }
   else if (randomChar === "HOWL") {
-    document.getElementById("ghibli-image").src = "assets/images/howls.jpg";
+    $("#ghibli-image").attr("src", "assets/images/howls.jpg");
+    $("#image-caption").text("Howl from:");
   }
   else if (randomChar === "KIKI") {
-    document.getElementById("ghibli-image").src = "assets/images/kiki.jpg";
+    $("#ghibli-image").attr("src", "assets/images/kiki.jpg");
+    $("#image-caption").text("Kiki from:");
   }
   else if (randomChar === "PONYO") {
-    document.getElementById("ghibli-image").src = "assets/images/ponyo.jpg";
+    $("#ghibli-image").attr("src", "assets/images/ponyo.jpg");
+    $("#image-caption").text("Ponyo from:");
   }
-  else if (randomChar === "KAGUYA") {
-    document.getElementById("ghibli-image").src = "assets/images/princesskaguya.jpg";
+  else if (randomChar === "TAKENOKO") {
+    $("#ghibli-image").attr("src", "assets/images/princesskaguya.jpg");
+    $("#image-caption").text("Takenoko from:");
   }
-  else if (randomChar === "MONONOKE") {
-    document.getElementById("ghibli-image").src = "assets/images/princessmononoke.jpeg";
+  else if (randomChar === "ASHITAKA") {
+    $("#ghibli-image").attr("src", "assets/images/princessmononoke.jpeg");
+    $("#image-caption").text("Ashitaka from:");
   }
   else if (randomChar === "CHIHIRO") {
-    document.getElementById("ghibli-image").src = "assets/images/spiritedaway.jpg";
+    $("#ghibli-image").attr("src", "assets/images/spiritedaway.jpg");
+    $("#image-caption").text("Chihiro from:");
   }
   else if (randomChar === "HAKU") {
-    document.getElementById("ghibli-image").src = "assets/images/spiritedaway.jpg";
+    $("#ghibli-image").attr("src", "assets/images/spiritedaway.jpg");
+    $("#image-caption").text("Haku from:");
   }
   else if (randomChar === "TOTORO") {
-    document.getElementById("ghibli-image").src = "assets/images/totoro.jpg";
+    $("#ghibli-image").attr("src", "assets/images/totoro.jpg");
+    $("#image-caption").text("Totoro from:");
   }
 }
 
@@ -60,7 +69,7 @@ function restart() {
   randomChar = characterNames[randomNum];
   charArray = randomChar.split("");
 
-  // Generating blanks spaces for random film name
+   // Generating blanks spaces for random film name
   for (var i=0; i < charArray.length; i++) {
     
     var isLetter = charArray[i];
@@ -86,17 +95,19 @@ document.onkeyup = function(event){
   var counter = 0;
   var allLettersFound;
 
-  for (var i=0; i < charArray.length; i++) {
+  if (userGuess.match(/[a-z]/i)) {
+    for (var i=0; i < charArray.length; i++) {
 
-    if (userGuess === charArray[i]) {
-      ltrPlacement[i] = charArray[i];
-      counter++;
+      if (userGuess === charArray[i]) {
+        ltrPlacement[i] = charArray[i];
+        counter++;
+      }
     }
-  }
 
-  if (counter === 0 && userGuess.length === 1) {
-    wrongGuess.push(userGuess);
-    lives--;
+    if (counter === 0 && userGuess.length === 1) {
+      wrongGuess.push(userGuess);
+      lives--;
+    }
   }
 
   var wrongLetter = wrongGuess.toString();
