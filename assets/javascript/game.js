@@ -69,7 +69,7 @@ function restart() {
   randomChar = characterNames[randomNum];
   charArray = randomChar.split("");
 
-   // Generating blanks spaces for random film name
+   // Generating blanks spaces for random character name
   for (var i=0; i < charArray.length; i++) {
     
     var isLetter = charArray[i];
@@ -80,7 +80,7 @@ function restart() {
   }
 }
 
-// Generating blanks spaces for random film name
+// Generating blanks spaces for random character name
 for (var i=0; i < charArray.length; i++) {
     
   var isLetter = charArray[i];
